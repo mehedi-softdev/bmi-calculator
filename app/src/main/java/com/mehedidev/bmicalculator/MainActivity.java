@@ -2,7 +2,9 @@ package com.mehedidev.bmicalculator;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -14,7 +16,8 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText etWeightInKg, etHeightInFit, etHeightInInch;
     private TextView tvOutput;
-    private Button btnCalc;
+    private Button btnCalc, btnHealthSuggestion;
+    private double bmi = 0d;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,13 +29,17 @@ public class MainActivity extends AppCompatActivity {
         etHeightInInch = findViewById(R.id.etHeightInInch);
         tvOutput = findViewById(R.id.tvOutput);
         btnCalc = findViewById(R.id.btnCalc);
-
+        btnHealthSuggestion = findViewById(R.id.btnHealthSuggestion);
+        btnHealthSuggestion.setVisibility(View.INVISIBLE); // it should display after
+                                                            // displaying bmi
+                                                            // result
     }
 
     @Override
     protected void onStart() {
         super.onStart();
         btnCalc.setOnClickListener(view -> setBtnCalcEvent());
+        btnHealthSuggestion.setOnClickListener(view -> setBtnHealthSuggestionEvent());
     }
 
     @Override
@@ -47,8 +54,8 @@ public class MainActivity extends AppCompatActivity {
         String heightInInchStr = etHeightInInch.getText().toString();
 
         if(weightStr.isEmpty()) weightStr = "0";
-        if(heightInFitStr.isEmpty()) heightInFitStr = "0";
-        if(heightInInchStr.isEmpty()) heightInInchStr = "0";
+        if(heightInFitStr.isEmpty()) heightInFitStr = "1"; // defaults if empty
+        if(heightInInchStr.isEmpty()) heightInInchStr = "1";
 
 
 //        setting weight and height
@@ -69,12 +76,20 @@ public class MainActivity extends AppCompatActivity {
             numberFormat.setMinimumIntegerDigits(2);
             numberFormat.setMaximumFractionDigits(2);
 //      displaying output
-            double bmi = (weight/(Math.pow(heightInMeter, 2)));
+            bmi = (weight/(Math.pow(heightInMeter, 2)));
             tvOutput.setText("YOUR BMI IS : " + numberFormat.format(bmi));
+            // if success then displaying suggestion button
+            if(bmi != 0) // if zero then don't need to show suggestion button
+            btnHealthSuggestion.setVisibility(View.VISIBLE);
         } catch (Exception e) {
             Toast.makeText(MainActivity.this, "Please insert correct values!", Toast.LENGTH_SHORT).show();
         }
+    } // setBtnCalcEvent()
 
-
+    private void setBtnHealthSuggestionEvent() {
+//        passing bmi result to suggestion activity
+        Intent intent = new Intent(MainActivity.this, HealthSuggestionActivity.class);
+        intent.putExtra("bmi", bmi);
+        startActivity(intent);
     }
 }

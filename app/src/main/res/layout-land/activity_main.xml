@@ -41,14 +41,14 @@
         android:id="@+id/tvHeightLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="36dp"
         android:text="@string/heightText"
         android:textColor="#AA00FF"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/etWeightInKg"
+        app:layout_constraintEnd_toEndOf="@+id/tvWeightLabel"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/etWeightInKg"
-        app:layout_constraintTop_toBottomOf="@+id/etWeightInKg" />
+        app:layout_constraintStart_toStartOf="@+id/tvWeightLabel"
+        app:layout_constraintTop_toBottomOf="@+id/tvWeightLabel" />
 
     <TextView
         android:id="@+id/tvAppNameText"
@@ -60,10 +60,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintHorizontal_bias="0.129"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.039" />
+        app:layout_constraintVertical_bias="0.041" />
 
     <TextView
         android:id="@+id/tvWeightLabel"
@@ -82,7 +82,7 @@
         android:id="@+id/etWeightInKg"
         android:layout_width="113dp"
         android:layout_height="48dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/_50_kg"
@@ -90,26 +90,28 @@
         android:textAlignment="center"
         android:textColor="#ff0000"
         android:textColorHint="#00838F"
-        app:layout_constraintEnd_toEndOf="@+id/tvWeightLabel"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/tvWeightLabel"
-        app:layout_constraintTop_toBottomOf="@+id/tvWeightLabel" />
+        app:layout_constraintEnd_toEndOf="@+id/tvAppNameText"
+        app:layout_constraintStart_toEndOf="@+id/tvWeightLabel"
+        app:layout_constraintTop_toBottomOf="@+id/tvAppNameText" />
 
     <EditText
         android:id="@+id/etHeightInFit"
         android:layout_width="112dp"
         android:layout_height="48dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:autofillHints=""
         android:ems="10"
         android:hint="@string/_5"
         android:inputType="numberDecimal"
         android:textAlignment="center"
         android:textColor="#ff0000"
-        app:layout_constraintEnd_toEndOf="@+id/tvHeightLabel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/etWeightInKg"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/tvHeightLabel"
-        app:layout_constraintTop_toBottomOf="@+id/tvHeightLabel"
-        android:autofillHints="" />
+        app:layout_constraintStart_toEndOf="@+id/tvHeightLabel"
+        app:layout_constraintTop_toBottomOf="@+id/etWeightInKg"
+        app:layout_constraintVertical_bias="0.004" />
 
     <TextView
         android:id="@+id/tvFitLabel"
@@ -129,40 +131,39 @@
         android:id="@+id/btnCalc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:backgroundTint="#FF5722"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="#761676"
         android:text="@string/btnCalcText"
-        app:layout_constraintEnd_toEndOf="@+id/tvInchLabel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/tvHeightLabel"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/etHeightInFit"
-        app:layout_constraintTop_toBottomOf="@+id/etHeightInFit" />
+        app:layout_constraintStart_toStartOf="@+id/tvHeightLabel"
+        app:layout_constraintTop_toBottomOf="@+id/etHeightInFit"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/tvOutput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
         android:layout_marginTop="24dp"
         android:textSize="25sp"
         android:textStyle="bold|italic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/btnCalc"
+        app:layout_constraintEnd_toEndOf="@+id/tvInchLabel"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/etHeightInFit"
-        app:layout_constraintTop_toBottomOf="@+id/btnCalc"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toEndOf="@+id/btnCalc"
+        app:layout_constraintTop_toBottomOf="@+id/etHeightInFit" />
 
     <Button
         android:id="@+id/btnHealthSuggestion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="116dp"
-        android:backgroundTint="#159692"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/teal_200"
         android:text="@string/health_suggestion"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/btnCalc"
-        app:layout_constraintHorizontal_bias="0.806"
+        app:layout_constraintEnd_toEndOf="@+id/tvOutput"
+        app:layout_constraintHorizontal_bias="0.525"
         app:layout_constraintStart_toStartOf="@+id/tvOutput"
-        app:layout_constraintTop_toBottomOf="@+id/btnCalc"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/tvOutput" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
