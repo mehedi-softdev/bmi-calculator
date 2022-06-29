@@ -7,12 +7,148 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/tvInchLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:layout_marginStart="24dp"
+        android:text="@string/inchText"
+        android:textAlignment="center"
+        android:textColor="#9575CD"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/etHeightInInch"
+        app:layout_constraintStart_toEndOf="@+id/etHeightInInch"
+        app:layout_constraintTop_toTopOf="@+id/etHeightInInch"
+        app:layout_constraintVertical_bias="0.523" />
+
+    <EditText
+        android:id="@+id/etHeightInInch"
+        android:layout_width="56dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/_0"
+        android:inputType="numberDecimal"
+        android:textAlignment="center"
+        android:textColor="#ff0000"
+        android:textColorHint="#78909C"
+        app:layout_constraintBottom_toBottomOf="@+id/tvFitLabel"
+        app:layout_constraintStart_toEndOf="@+id/tvFitLabel"
+        app:layout_constraintTop_toTopOf="@+id/tvFitLabel" />
+
+    <TextView
+        android:id="@+id/tvHeightLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/heightText"
+        android:textColor="#AA00FF"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/etWeightInKg"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/etWeightInKg"
+        app:layout_constraintTop_toBottomOf="@+id/etWeightInKg" />
+
+    <TextView
+        android:id="@+id/tvAppNameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/appNameText"
+        android:textColor="@color/teal_700"
+        android:textSize="22sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.039" />
+
+    <TextView
+        android:id="@+id/tvWeightLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="@string/weightText"
+        android:textColor="#AA00FF"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/tvAppNameText"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvAppNameText"
+        app:layout_constraintTop_toBottomOf="@+id/tvAppNameText" />
+
+    <EditText
+        android:id="@+id/etWeightInKg"
+        android:layout_width="113dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/_50_kg"
+        android:inputType="numberDecimal"
+        android:textAlignment="center"
+        android:textColor="#ff0000"
+        android:textColorHint="#78909C"
+        app:layout_constraintEnd_toEndOf="@+id/tvWeightLabel"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvWeightLabel"
+        app:layout_constraintTop_toBottomOf="@+id/tvWeightLabel" />
+
+    <EditText
+        android:id="@+id/etHeightInFit"
+        android:layout_width="112dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/_5"
+        android:inputType="numberDecimal"
+        android:textAlignment="center"
+        android:textColor="#ff0000"
+        app:layout_constraintEnd_toEndOf="@+id/tvHeightLabel"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvHeightLabel"
+        app:layout_constraintTop_toBottomOf="@+id/tvHeightLabel"
+        android:autofillHints="" />
+
+    <TextView
+        android:id="@+id/tvFitLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="@string/footText"
+        android:textAlignment="center"
+        android:textColor="#9575CD"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/etHeightInFit"
+        app:layout_constraintStart_toEndOf="@+id/etHeightInFit"
+        app:layout_constraintTop_toTopOf="@+id/etHeightInFit" />
+
+    <Button
+        android:id="@+id/btnCalc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="@string/btnCalcText"
+        app:layout_constraintEnd_toEndOf="@+id/tvInchLabel"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/etHeightInFit"
+        app:layout_constraintTop_toBottomOf="@+id/etHeightInFit" />
+
+    <TextView
+        android:id="@+id/tvOutput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/bmi_25"
+        android:textSize="25sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btnCalc"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/etHeightInFit"
+        app:layout_constraintTop_toBottomOf="@+id/btnCalc"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

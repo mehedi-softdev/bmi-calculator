@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">BMI Calculator</string>
+    <string name="appNameText">BODY MASS INDEX CALCULATOR</string>
+    <string name="weightText">Enter your weight (Kg)</string>
+    <string name="heightText">Enter your height</string>
+    <string name="footText">Fit</string>
+    <string name="inchText">Inch</string>
+    <string name="btnCalcText">Calculate</string>
+    <string name="_50_kg">50 kg</string>
+    <string name="_5">5</string>
+    <string name="_0">0</string>
+    <string name="bmi_25">BMI : 25</string>
 </resources>
