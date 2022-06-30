@@ -77,10 +77,18 @@ public class MainActivity extends AppCompatActivity {
             numberFormat.setMaximumFractionDigits(2);
 //      displaying output
             bmi = (weight/(Math.pow(heightInMeter, 2)));
-            tvOutput.setText("YOUR BMI IS : " + numberFormat.format(bmi));
+
             // if success then displaying suggestion button
-            if(bmi != 0) // if zero then don't need to show suggestion button
-            btnHealthSuggestion.setVisibility(View.VISIBLE);
+            if(bmi != 0 && Double.isFinite(bmi)) {
+                // if zero then don't need to show suggestion button
+                tvOutput.setText("YOUR BMI IS : " + numberFormat.format(bmi));
+                btnHealthSuggestion.setVisibility(View.VISIBLE);
+            }
+            else {
+                tvOutput.setText("Funny! You are not inserted correct values");
+            }
+
+
         } catch (Exception e) {
             Toast.makeText(MainActivity.this, "Please insert correct values!", Toast.LENGTH_SHORT).show();
         }

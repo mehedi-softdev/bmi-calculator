@@ -11,4 +11,7 @@
     <string name="_0">0</string>
     <string name="bmi_25">BMI : 25</string>
     <string name="health_suggestion">Health Suggestion</string>
+    <string name="tvSelectGenderText">Select your gender below</string>
+    <string name="maleText">Male</string>
+    <string name="femaleText">Female</string>
 </resources>

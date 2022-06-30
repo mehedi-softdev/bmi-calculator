@@ -4,6 +4,58 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="10dp"
     tools:context=".HealthSuggestionActivity">
 
+    <TextView
+        android:id="@+id/tvSelectGenderText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/tvSelectGenderText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.761"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.019" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/swGenderMale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:minHeight="48dp"
+        android:text="@string/maleText"
+        android:textColor="#0D1422"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvSelectGenderText"
+        app:layout_constraintStart_toStartOf="@+id/tvSelectGenderText"
+        app:layout_constraintTop_toBottomOf="@+id/tvSelectGenderText" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/swGenderFemale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:minHeight="48dp"
+        android:text="@string/femaleText"
+        android:textColor="#0D1422"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/swGenderMale"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/swGenderMale"
+        app:layout_constraintTop_toBottomOf="@+id/swGenderMale" />
+
+    <TextView
+        android:id="@+id/tvSuggestionOutput"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="48dp"
+        android:padding="15dp"
+        android:textColor="#009688"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/swGenderFemale" />
 </androidx.constraintlayout.widget.ConstraintLayout>
