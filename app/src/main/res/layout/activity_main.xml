@@ -132,11 +132,12 @@
         android:layout_marginTop="36dp"
         android:backgroundTint="#FF5722"
         android:text="@string/btnCalcText"
-        android:textColor="#212121"
+        android:textColor="#ffffff"
         app:layout_constraintEnd_toEndOf="@+id/tvInchLabel"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/etHeightInFit"
-        app:layout_constraintTop_toBottomOf="@+id/etHeightInFit" />
+        app:layout_constraintTop_toBottomOf="@+id/etHeightInFit"
+        tools:ignore="TextContrastCheck" />
 
     <TextView
         android:id="@+id/tvOutput"
@@ -159,12 +160,13 @@
         android:layout_marginTop="116dp"
         android:backgroundTint="#159692"
         android:text="@string/health_suggestion"
-        android:textColor="#000000"
+        android:textColor="#ffffff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/btnCalc"
         app:layout_constraintHorizontal_bias="0.806"
         app:layout_constraintStart_toStartOf="@+id/tvOutput"
         app:layout_constraintTop_toBottomOf="@+id/btnCalc"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="TextContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
