@@ -38,8 +38,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+        reset();
         btnCalc.setOnClickListener(view -> setBtnCalcEvent());
         btnHealthSuggestion.setOnClickListener(view -> setBtnHealthSuggestionEvent());
+    }
+
+    private void reset() {
+        tvOutput.setText("");
+        btnHealthSuggestion.setVisibility(View.INVISIBLE);
     }
 
     @Override
@@ -54,8 +60,8 @@ public class MainActivity extends AppCompatActivity {
         String heightInInchStr = etHeightInInch.getText().toString();
 
         if(weightStr.isEmpty()) weightStr = "0";
-        if(heightInFitStr.isEmpty()) heightInFitStr = "1"; // defaults if empty
-        if(heightInInchStr.isEmpty()) heightInInchStr = "1";
+        if(heightInFitStr.isEmpty()) heightInFitStr = "0"; // defaults if empty
+        if(heightInInchStr.isEmpty()) heightInInchStr = "0";
 
 
 //        setting weight and height
