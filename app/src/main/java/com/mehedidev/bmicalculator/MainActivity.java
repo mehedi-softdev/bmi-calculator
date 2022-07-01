@@ -77,11 +77,12 @@ public class MainActivity extends AppCompatActivity {
             numberFormat.setMaximumFractionDigits(2);
 //      displaying output
             bmi = (weight/(Math.pow(heightInMeter, 2)));
+            bmi = Double.parseDouble(numberFormat.format(bmi));
 
             // if success then displaying suggestion button
             if(bmi != 0 && Double.isFinite(bmi)) {
                 // if zero then don't need to show suggestion button
-                tvOutput.setText("YOUR BMI IS : " + numberFormat.format(bmi));
+                tvOutput.setText("YOUR BMI IS : " + bmi);
                 btnHealthSuggestion.setVisibility(View.VISIBLE);
             }
             else {
@@ -96,8 +97,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void setBtnHealthSuggestionEvent() {
 //        passing bmi result to suggestion activity
-        Intent intent = new Intent(MainActivity.this, HealthSuggestionActivity.class);
-        intent.putExtra("bmi", bmi);
+        Intent intent = new Intent(MainActivity.this,
+                HealthSuggestionActivity.class);
+        Bundle b = new Bundle();
+        b.putDouble("bmi", this.bmi);
+        intent.putExtras(b);
         startActivity(intent);
     }
 }
