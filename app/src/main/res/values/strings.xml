@@ -14,4 +14,7 @@
     <string name="tvSelectGenderText">Select your gender below</string>
     <string name="maleText">Male</string>
     <string name="femaleText">Female</string>
+    <string name="todo">TODO</string>
+    <string name="enter">Enter</string>
+    <string name="bmi_calculator">BMI CALCULATOR</string>
 </resources>
