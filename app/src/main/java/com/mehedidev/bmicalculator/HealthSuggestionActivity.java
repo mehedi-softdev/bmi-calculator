@@ -57,8 +57,9 @@ public class HealthSuggestionActivity extends AppCompatActivity {
                     if(swGenderFemale.isChecked())
                         swGenderFemale.setChecked(false);
 //                    rest of the code
+                    tvSuggestionOutput.setText("");
                     tvSuggestionOutput.setText(
-                            maleSuggestion(bmiValFinal)
+                           "According to male data:\t " + maleSuggestion(bmiValFinal)
                     );
                 }
 
@@ -68,8 +69,9 @@ public class HealthSuggestionActivity extends AppCompatActivity {
                 if(swGenderMale.isChecked())
                     swGenderMale.setChecked(false);
 //                rest of the code
+                tvSuggestionOutput.setText("");
                 tvSuggestionOutput.setText(
-                        femaleSuggestion(bmiValFinal)
+                        "According to female data:\t " + femaleSuggestion(bmiValFinal)
                 );
             }
 
@@ -78,7 +80,6 @@ public class HealthSuggestionActivity extends AppCompatActivity {
 //    related with suggestion viewer ( for male )
     private String maleSuggestion(double bmiVal) {
         String suggestion = "";
-
         if(bmiVal < HealthSuggestionModel.CORRECT_WEIGHT_MIN_VAL) {
             tvSuggestionOutput.setTextColor(Color.RED);
             // person is unhealthy
@@ -111,8 +112,8 @@ public class HealthSuggestionActivity extends AppCompatActivity {
     //    related with suggestion viewer ( for female )
     private String femaleSuggestion(double bmiVal) {
         String suggestion = "";
-
         if(bmiVal < HealthSuggestionModel.CORRECT_WEIGHT_MIN_VAL) {
+            tvSuggestionOutput.setTextColor(Color.RED);
             // person is unhealthy
             suggestion = HealthSuggestionModel.suggestions[
                     HealthSuggestionModel.BAD_HEALTH
@@ -120,17 +121,20 @@ public class HealthSuggestionActivity extends AppCompatActivity {
         }
         else if(bmiVal >= HealthSuggestionModel.CORRECT_WEIGHT_MIN_VAL &&
                 bmiVal <= HealthSuggestionModel.CORRECT_WEIGHT_MAX_VAL) {
+            tvSuggestionOutput.setTextColor(Color.GREEN);
             suggestion = HealthSuggestionModel.suggestions[
                     HealthSuggestionModel.GOOD_HEALTH
                     ];
         }
         else if (bmiVal > HealthSuggestionModel.CORRECT_WEIGHT_MAX_VAL &&
                 bmiVal <= HealthSuggestionModel.HIGH_WEIGHT_MAX_VAL) {
+            tvSuggestionOutput.setTextColor(Color.GRAY);
             suggestion = HealthSuggestionModel.suggestions[
                     HealthSuggestionModel.FAT_HEALTH
                     ];
         }
         else if (bmiVal > HealthSuggestionModel.HIGH_WEIGHT_MAX_VAL) {
+            tvSuggestionOutput.setTextColor(Color.MAGENTA);
             suggestion = HealthSuggestionModel.suggestions[
                     HealthSuggestionModel.VERY_FATTY_HEALTH
                     ];
